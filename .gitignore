@@ -1,0 +1,7 @@
+.idea/
+
+go.sum
+
+config/config.yml
+
+tm-fastagi

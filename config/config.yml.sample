@@ -1,0 +1,264 @@
+listen_addr: 127.0.0.1:4580
+
+redis:
+  host: 127.0.0.1
+  port: 6379
+  auth: ""
+
+api:
+  host: 192.168.1.2
+  port: 3005
+  apikey: "123"
+  tapikey: "123"
+
+nats:
+  # Оставить постым, если не используется подтверждение номера по одноразовым кодам
+  uri: nats://127.0.0.1:4222
+
+# Сообщать информацию о водителе перед предложением пошарить по меню
+driver_info_before_ivr: true
+
+# Запрет отмены после подтверждения водителем
+not_cancel_in_state_confirm: true
+
+# ИД состояния, в которое переводить при отмене
+state_cancel: 53
+
+# ИД состояния, в которое переводить заказ при звонке водителю (если пустой ничего не делаем)
+state_client_dial_to_driver:
+
+# ИД категории черных номеров
+black_phone_category_id: 20
+
+# ИД категории белых номеров
+white_phone_category_id: 30
+
+# ИД группы клиентов для черных номеров
+black_client_group_id: 20
+
+# ИД группы клиентов для белых номеров
+white_client_group_id: 30
+
+state_confirm:
+  - 7
+  - 21 # подтвержден
+  - 24 # позвонили
+  - 32 # не дозвонились
+  - 51 # позвонить водителю
+
+state_in_place:
+  - 10 # на месте
+  - 12 # клиент не вышел
+  - 31 # выходите
+
+state_in_car:
+  - 11 # клиент в машине
+
+colors:
+  красная: taxi/color-red-fem
+  малиновая: taxi/color-red-fem
+  красный: taxi/color-red
+  "т.малиновый": taxi/color-red
+  малиновый: taxi/color-red
+  синяя: taxi/color-blue-fem
+  синия: taxi/color-blue-fem
+  "т - синяя": taxi/color-blue-fem
+  темно-синяя: taxi/color-blue-fem
+  сине-зеленая: taxi/color-blue-fem
+  сине-зеленый: taxi/color-navy
+  синий: taxi/color-navy
+  "синий/зеленый": taxi/color-navy
+  светло-синий: taxi/color-navy
+  "темно синий": taxi/color-navy
+  "т - синий": taxi/color-navy
+  темно-синий: taxi/color-navy
+  "тёмно синий": taxi/color-navy
+  светло-синий: taxi/color-navy
+  сине-зеленый: taxi/color-navy
+  серая: taxi/color-gray-fem
+  темно-серая: taxi/color-gray-fem
+  серо-зеленая: taxi/color-gray-fem
+  серо-голубая: taxi/color-gray-fem
+  "серо зеленая": taxi/color-gray-fem
+  серо-синий: taxi/color-grey
+  "темно серая": taxi/color-gray-fem
+  серый: taxi/color-grey
+  "серо голубой": taxi/color-grey
+  "темно серый": taxi/color-grey
+  "серо зелений": taxi/color-grey
+  серо-голубой: taxi/color-grey
+  серо-зеленый: taxi/color-grey
+  серо-голубая: taxi/color-gray-fem
+  "серая синий": taxi/color-grey
+  темно-серый: taxi/color-grey
+  светло-серый: taxi/color-grey
+  "серо - синий": taxi/color-grey
+  черная: taxi/color-black-fem
+  сине-черная: taxi/color-black-fem
+  чёрная: taxi/color-black-fem
+  черный: taxi/color-black
+  чёрный: taxi/color-black
+  "графитовый металлик": taxi/color-black
+  зеленая: taxi/color-green-fem
+  зелёная: taxi/color-green-fem
+  "т зеленая": taxi/color-green-fem
+  "тём.зелёная": taxi/color-green-fem
+  темно-зеленая: taxi/color-green-fem
+  "темно зеленая": taxi/color-green-fem
+  салатовая: taxi/color-green-fem
+  светло-зеленая: taxi/color-green-fem
+  "т.зеленая": taxi/color-green-fem
+  зеленый: taxi/color-green
+  "темно зеленый": taxi/color-green
+  светло-зеленный: taxi/color-green
+  светло-зеленый: taxi/color-green
+  зелёный: taxi/color-green
+  салатный: taxi/color-green
+  темно-зеленый: taxi/color-green
+  желто-зеленый: taxi/color-green
+  салатовый: taxi/color-green
+  темнозеленый: taxi/color-green
+  белая: taxi/color-white-fem
+  белый: taxi/color-white
+  кварц: taxi/color-white
+  коричневая: taxi/color-brown-fem
+  коричневый: taxi/color-brown-fem
+  каричневый: taxi/color-brown-fem
+  светло-коричневый: taxi/color-brown-fem
+  золотистая: taxi/color-gold-fem
+  золотистый: taxi/color-gold
+  желтая: taxi/color-yellow-fem
+  оранжевая: taxi/color-orange-fem
+  желтый: taxi/color-yellow
+  "бело желтый": taxi/color-yellow
+  оранжевый: taxi/color-organge
+  бордовая: taxi/color-claret-fem
+  бордо: taxi/color-claret-fem
+  бардовая: taxi/color-claret-fem
+  бордовый: taxi/color-black-red
+  фиолетовая: taxi/color-claret-fem
+  темно-фиолетовая: taxi/color-claret-fem
+  фиолетовый: taxi/color-purple
+  "темно фиолетовый": taxi/color-purple
+  сиреневый: taxi/color-purple
+  баклажан: taxi/color-purple
+  вишневая: taxi/color-cherry-fem
+  вишнёвая: taxi/color-cherry-fem
+  "темно вишневая": taxi/color-cherry-fem
+  ттемно-вишневая: taxi/color-cherry-fem
+  вишневый: taxi/color-cherry
+  темно-вишневый: taxi/color-cherry
+  темный: color-dark
+  темная: color-dark-fem
+  светлый: color-light
+  светлая: color-light-fem
+  розовый: taxi/color-pink
+  розовая: color-pink-fem
+  серебристая: taxi/color-silver-fem
+  серебритая: taxi/color-silver-fem
+  сереб: taxi/color-silver-fem
+  серебр: taxi/color-silver-fem
+  серебро: taxi/color-silver-fem
+  серебрис: taxi/color-silver-fem
+  серебристый: taxi/color-silver
+  бирюзовая: taxi/color-turquoise-fem
+  бирюзовый: taxi/color-turquoise
+  голубая: taxi/color-light-blue-fem
+  свт-голубая: taxi/color-light-blue-fem
+  голубой: taxi/color-blue
+  светло-голубой: taxi/color-blue
+  бежевая: taxi/color-biege-fem
+  бежевый: taxi/color-biege
+
+car_marks:
+  акура: taxi/car-inomarka
+  альфа_ромео: taxi/car-inomarka
+  чери: taxi/car-inomarka
+  киа: taxi/car-kia
+  кия: taxi/car-kia
+  "киа рио": taxi/car-kia
+  ровер: rover
+  шкода: taxi/car-skoda
+  фольксваген: taxi/car-volkswagen
+  фольцваген: taxi/car-volkswagen
+  фолькцваген: taxi/car-volkswagen
+  фольцвагнен: taxi/car-volkswagen
+  "фольстваген пассат": taxi/car-volkswagen
+  гольф: taxi/car-volkswagen
+  поло: taxi/car-volkswagen
+  деу: taxi/car-daewoo
+  дэу: taxi/car-daewoo
+  дэу_нексия: taxi/car-daewoo-nexia
+  дэу_матиз: taxi/car-daewoo-matiz
+  дэу_джентра: taxi/car-daewoo-gentra
+  мерседес: taxi/car-mercedes
+  меседес: taxi/car-mercedes
+  бмв: taxi/car-bmw
+  лада: taxi/car-vaz
+  форд: taxi/car-ford
+  ауди: taxi/car-audi
+  додж: taxi/car-dodge
+  опель: taxi/car-opel
+  пежо: taxi/car-peugeot
+  рено: taxi/car-renault
+  renault: taxi/car-renault
+  рено_логан: taxi/car-renault
+  митсубиси: taxi/car-mitsubishi
+  митсубиши: taxi/car-mitsubishi
+  мицубиси: taxi/car-mitsubishi
+  сеат: taxi/car-seat
+  хонда: taxi/car-honda
+  мазда: taxi/car-mazda
+  газель: taxi/car-gazel
+  грузовая_газель: taxi/car-gazel
+  волга: taxi/car-volga
+  вольво: taxi/car-volvo
+  вортекс: taxi/car-inomarka
+  газ: taxi/car-volga
+  субару: taxi/car-subaru
+  тойота: taxi/car-toyota
+  тайота: taxi/car-toyota
+  шаран: sharan
+  ниссан: taxi/car-nissan
+  нисан: taxi/car-nissan
+  хендай: taxi/car-hyndai
+  hyundai: taxi/car-hyndai
+  хёндай_солярис: taxi/car-hyndai
+  хёндай_элантра: taxi/car-hyndai
+  соната: taxi/car-hyndai
+  хундай: taxi/car-hyndai
+  шевроле: taxi/car-chevrolet
+  лексус: taxi/car-lexus
+  лифан: taxi/car-lifan
+  лада_гранта: taxi/car-lada-granta
+  гранта: taxi/car-lada-granta
+  гранда: taxi/car-lada-granta
+  лада_приора: taxi/car-lada-priora
+  приора: taxi/car-lada-priora
+  лада_ларгус: taxi/car-lada-largus
+  ларгус: taxi/car-lada-largus
+  лада_калина: taxi/car-lada-kalina
+  калина: taxi/car-lada-kalina
+  "лада калина": taxi/car-lada-kalina
+  лада10: taxi/car-lada10
+  лада_веста: taxi/car-vaz
+  10: taxi/car-lada10
+  "10-ка": taxi/car-lada10
+  "ваз/10": taxi/car-lada10
+  лада11: taxi/car-lada11
+  лада12: taxi/car-lada12
+  "12-ая": taxi/car-lada12
+  2112: taxi/car-lada12
+  лада14: taxi/car-lada14
+  лада_14: taxi/car-lada14
+  14: taxi/car-lada14
+  "14-ая": taxi/car-lada14
+  лада15: taxi/car-lada15
+  7ка: taxi/car-vaz
+  жигули_7: taxi/car-07
+  лада9: taxi/car-lada9
+  9: taxi/car-lada9
+  99: taxi/car-lada99
+  лада99: taxi/car-lada99
+  ваз: taxi/car-vaz
+  ".ваз": taxi/car-vaz
