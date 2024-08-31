@@ -35,7 +35,7 @@ func main() {
 
 	redisConnect(config.Redis)
 
-	common_api_client = tm.NewClient(config.Api.Host+":"+config.Api.Port, config.Api.ApiKey)
+	common_api_client = tm.NewClient(config.Api.Host+":"+config.Api.Port, config.Api.ApiKey, config.Api.UserID)
 	tm_tapi_client = tmt.NewClient(config.Api.Host+":"+config.Api.Port, config.Api.TApiKey)
 
 	if *debug {

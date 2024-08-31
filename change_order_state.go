@@ -18,7 +18,7 @@ func changeOrderState(order_id string, need_state int) bool {
 	_, err = common_api_client.UpdateOrder(
 		tm.UpdateOrderRequest{
 			OrderID: orderId,
-			StateID: &need_state,
+			StateID: need_state,
 		},
 	)
 	if err != nil {

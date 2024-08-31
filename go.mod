@@ -5,7 +5,7 @@ go 1.22
 require (
 	github.com/nats-io/nats.go v1.30.0
 	github.com/redis/go-redis/v9 v9.6.1
-	github.com/ros-tel/taximaster v1.0.8
+	github.com/ros-tel/taximaster v1.0.13
 	github.com/zaf/agi v0.0.0-20170121130222-38a15db6691c
 	gopkg.in/yaml.v2 v2.4.0
 )

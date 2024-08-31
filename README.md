@@ -69,7 +69,7 @@ same => n,AGI(agi://127.0.0.1:4580/cancel_by_order_id?order_id=${URIENCODE(${ID_
 same => n,AGI(agi://127.0.0.1:4580/set_client_group?phone=79876543210&group=34)
 ```
 
-## Получить номер волителя по позывному
+## Получить номер водителя по позывному
 
 ```
 same => n,AGI(agi://127.0.0.1:4580/driver_phone_by_crew?crew_code=${EXTEN})

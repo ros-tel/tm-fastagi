@@ -37,11 +37,11 @@ func setClientGroup(query url.Values) {
 		ClientGroup: groupId,
 	}
 
-	s1 := rand.NewSource(time.Now().UnixNano())
-	r1 := rand.New(s1)
-
 	// нет клиента
 	if tresp.ClientID == 0 {
+		s1 := rand.NewSource(time.Now().UnixNano())
+		r1 := rand.New(s1)
+
 		registerClientRequest.Name = "Без имени"
 		registerClientRequest.Login = phone + fmt.Sprintf("%06d", r1.Int63())[:8]
 		registerClientRequest.Password = phone + fmt.Sprintf("%06d", r1.Int63())[:8]
@@ -61,8 +61,8 @@ func setClientGroup(query url.Values) {
 
 	_, err = common_api_client.UpdateClientInfo(
 		tm.UpdateClientInfoRequest{
-			ClientGroup: groupId,
-			ClientID:    tresp.ClientID,
+			ClientGroupID: groupId,
+			ClientID:      tresp.ClientID,
 		},
 	)
 	if err != nil {

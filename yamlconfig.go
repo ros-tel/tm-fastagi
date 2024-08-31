@@ -54,6 +54,7 @@ type (
 		Api struct {
 			Host    string `yaml:"host"`
 			Port    string `yaml:"port"`
+			UserID  *int   `yaml:"user_id"`
 			ApiKey  string `yaml:"apikey"`
 			TApiKey string `yaml:"tapikey"`
 		} `yaml:"api"`
