@@ -6,6 +6,8 @@ After=network.target
 User=www-data
 Group=www-data
 ; PermissionsStartOnly=yes
+; GODEBUG=tlsrsakex=1 необходимо для разрешения использовать RSA
+Environment=GODEBUG=tlsrsakex=1
 Environment=HOME=/opt/tm-fastagi
 WorkingDirectory=/opt/tm-fastagi
 ; ExecStartPre=
