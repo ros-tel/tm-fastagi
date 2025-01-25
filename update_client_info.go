@@ -61,8 +61,8 @@ func setClientGroup(query url.Values) {
 
 	_, err = common_api_client.UpdateClientInfo(
 		tm.UpdateClientInfoRequest{
-			ClientGroupID: groupId,
 			ClientID:      tresp.ClientID,
+			ClientGroupID: &groupId,
 		},
 	)
 	if err != nil {
